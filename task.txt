@@ -1,0 +1,47 @@
+Task 2: Dropout graph
+Implement Bar chart based on the dropout amount which is a real value (float/double) in percentage.
+The amount of filling is based on teh value of the percentage.
+There is not a defined number of nodes (bars) so the view has to be scrollable on the horizontal axis.
+The bars can be of different types: BASIC OR SERVICE, which have according colors (blue for basic,  green for service)
+
+
+You will receive a json from the API which looks like this:
+data model:
+
+NodeMap = {
+	"node1": {
+		label: "Contact Info",
+		value: 100,
+		type: "BASIC",
+		adjList: ["node2"]
+	},
+	"node2": {
+		label: "NemID",
+		value: 95,
+		type: "SERVICE",
+		adjList: ["node3", "nodeBranch2"]
+	},
+	"node3": {
+		label: "Personal Address",
+		value: 95,
+		type: "BASIC",
+		adjList: []
+	},
+	"nodeBranch2":  {
+		label: "Branch 2",
+		value: 55,
+		type: "BASIC",
+		adjList: ["nodeBranch3"]
+
+	},
+	"nodeBranch3":  {
+		label: "Branch 3",
+		value: 25,
+		type: "BASIC",
+		adjList: []
+
+	}
+}
+This graph contains one branch at "node2" but your implementation should be able to  support any number of branches.
+Note you can  have branches further up the graph. I  will test if  it  works  properly.
+The task needs to show knowledge of react framework. (w/ Webpack)
