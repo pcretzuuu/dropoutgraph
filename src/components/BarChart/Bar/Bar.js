@@ -83,11 +83,12 @@ const BarLine = styled.div`
 `;
 
 function Bar (props) {
-    const barLabel = props.node.label;
-    const barValue = props.node.value;
+    const {node, lastNode} = props;
+    const barLabel = node.label;
+    const barValue = node.value;
 
-    const decrease = props.node.value - props.lastNode;
-    const decreasePercentage = (decrease / props.node.value * 100) * (-1);
+    const decrease = node.value - lastNode;
+    const decreasePercentage = (decrease / node.value * 100) * (-1);
 
 
     return (
@@ -96,15 +97,15 @@ function Bar (props) {
                 <BarGridColumn style={{}}>
                     <BarLineWrapper>
                         <BarLine style={{
-                            height: 400 * (props.node.value / 100),
-                            backgroundColor: colors[props.node.type.toLowerCase()]
+                            height: 400 * (node.value / 100),
+                            backgroundColor: colors[node.type.toLowerCase()]
                         }} size={10}>
                             <BarLabel>{barLabel}</BarLabel>
                         </BarLine>
                     </BarLineWrapper>
                     <BarPercent>{barValue}%</BarPercent>
                 </BarGridColumn>
-                {props.lastNode && <BarGridColumn>
+                {lastNode && <BarGridColumn>
                     <IconWrapper>
                         <CustomArrowDownIcon style={{fontSize: 16}}/>
                     </IconWrapper>

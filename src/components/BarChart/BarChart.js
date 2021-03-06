@@ -123,17 +123,17 @@ const useStyles = makeStyles(() => ({
 function BarChart(props) {
     const classes = useStyles();
 
+    const { nodes } = props;
     const [finalBranch, setFinalBranch] = useState([]);
     const [selectedBranch, setSelectedBranch] = useState('');
 
-    const branches = findBranchesInNodes(props.nodes);
+    const branches = findBranchesInNodes(nodes);
 
     const handleBranch = (e) => {
         setSelectedBranch(e.target.value)
-        const branch = createBranch(props.nodes, e.target.value);
+        const branch = createBranch(nodes, e.target.value);
         setFinalBranch(branch);
     }
-
 
     return (
         <CustomSection>
