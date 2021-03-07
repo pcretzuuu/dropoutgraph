@@ -1,7 +1,6 @@
 function createBranch(nodes, branchName) {
     const finalBranch = [];
 
-
     const findParents = (child) => {
         for (const key in nodes) {
             if(nodes[key].adjList.filter(c => c === child).length > 0) {
@@ -13,7 +12,7 @@ function createBranch(nodes, branchName) {
 
     findParents(branchName);
 
-    branchName &&finalBranch.push(nodes[branchName]);
+    branchName && finalBranch.push(nodes[branchName]);
     return finalBranch;
 }
 

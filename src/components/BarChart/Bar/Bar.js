@@ -94,12 +94,15 @@ function Bar (props) {
     return (
         <div>
             <BarGrid>
-                <BarGridColumn style={{}}>
+                <BarGridColumn>
                     <BarLineWrapper>
-                        <BarLine style={{
-                            height: 400 * (node.value / 100),
-                            backgroundColor: colors[node.type.toLowerCase()]
-                        }} size={10}>
+                        <BarLine
+                            style={{
+                                height: 400 * (node.value / 100),
+                                backgroundColor: colors[node.type.toLowerCase()]
+                            }}
+                            size={10}
+                        >
                             <BarLabel>{barLabel}</BarLabel>
                         </BarLine>
                     </BarLineWrapper>
